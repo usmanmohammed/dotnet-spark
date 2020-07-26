@@ -9,9 +9,9 @@ jobs:
     - name: Git checkout
       uses: actions/checkout@v2
 
-    - name: Go to project directory
+    - name: Set solution path
       run: |
-        cd src/Dotnet.Spark.Examples/
+        export SOLUTION_PATH=src/Dotnet.Spark.Examples
     
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
@@ -20,10 +20,12 @@ jobs:
       
     - name: Install dependencies
       run: dotnet restore
-      working-directory: src/Dotnet.Spark.Examples/Dotnet.Spark.CSharp.Examples.AzureStorage/
+      working-directory: $SOLUTION_PATH
     
     - name: Build
       run: dotnet build --configuration Release --no-restore
-    
+      working-directory: $SOLUTION_PATH
+   
     - name: Test
       run: dotnet test --no-restore --verbosity normal
+      working-directory: $SOLUTION_PATH
