@@ -11,7 +11,7 @@ jobs:
 
     - name: Go to project directory
       run: |
-        cd src/Dotnet.Spark.Examples/Dotnet.Spark.CSharp.Examples.AzureStorage/
+        cd src/Dotnet.Spark.Examples/
     
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
