@@ -5,14 +5,11 @@ on: [push, pull_request]
 jobs:
   build:
     runs-on: ubuntu-latest   
+    env:
+      build_dir:  ./src/Dotnet.Spark.Examples/
     steps:
     - name: Git checkout
       uses: actions/checkout@v2
-
-    - name: Set solution path
-      run: |
-        export SOLUTION_PATH=./src/Dotnet.Spark.Examples/
-        echo "::set-env name=SOLUTION_PATH::$SOLUTION_PATH"
     
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
@@ -21,12 +18,12 @@ jobs:
       
     - name: Install dependencies
       run: dotnet restore
-      working-directory: ${{ env.SOLUTION_PATH }}
+      working-directory: ${{ env.build_dir }}
     
     - name: Build
       run: dotnet build --configuration Release --no-restore
-      working-directory: ${{ env.SOLUTION_PATH }}
+      working-directory: ${{ env.build_dir }}
    
     - name: Test
       run: dotnet test --no-restore --verbosity normal
-      working-directory: ${{ env.SOLUTION_PATH }}
+      working-directory: ${{ env.build_dir }}
