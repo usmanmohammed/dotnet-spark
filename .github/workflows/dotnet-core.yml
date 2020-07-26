@@ -20,6 +20,7 @@ jobs:
       
     - name: Install dependencies
       run: dotnet restore
+      working-directory: src/Dotnet.Spark.Examples/Dotnet.Spark.CSharp.Examples.AzureStorage/
     
     - name: Build
       run: dotnet build --configuration Release --no-restore
