@@ -15,7 +15,9 @@ jobs:
         dotnet-version: 3.1.301
     
     - name: Go to project directory
-      run: cd src/Dotnet.Spark.Examples/Dotnet.Spark.CSharp.Examples.AzureStorage
+      run: |
+        cd src/Dotnet.Spark.Examples/Dotnet.Spark.CSharp.Examples.AzureStorage/
+        ls
       
     - name: Install dependencies
       run: dotnet restore
