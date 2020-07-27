@@ -9,16 +9,15 @@ namespace Dotnet.Spark.CSharp.Examples.AzureStorage
     {
         static void Main(string[] args)
         {
-            // Verify environment variable
+            // Verify environment variables
             if (args.Length != 2)
             {
                 Console.Error.WriteLine("Usage: $AZURE_STORAGE_ACCOUNT $AZURE_STORAGE_KEY");
-
                 Environment.Exit(1);
             }
 
-            // Specify path in Azure Storage
-            string sampleFilePath =
+            // Specify file path in Azure Storage
+            string filePath =
                 $"wasbs://dotnet-spark@{args[0]}.blob.core.windows.net/json/people.json";
             
             // Create SparkSession
@@ -51,10 +50,10 @@ namespace Dotnet.Spark.CSharp.Examples.AzureStorage
             df.Show();
 
             // Write DataFrame to Azure Storage
-            df.Write().Mode(SaveMode.Overwrite).Json(sampleFilePath);
+            df.Write().Mode(SaveMode.Overwrite).Json(filePath);
 
             // Read saved DataFrame from Azure Storage
-            DataFrame readDf = spark.Read().Json(sampleFilePath);
+            DataFrame readDf = spark.Read().Json(filePath);
 
             // Print DataFrame
             readDf.Show();
