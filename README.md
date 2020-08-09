@@ -3,7 +3,7 @@ Example implementations of .NET for Apache Spark.
 
 ![.NET Core](https://github.com/usmanmohammed/dotnet-spark-samples/workflows/.NET%20Core/badge.svg?branch=master)
 
-In this repo, we have various example implementations of .NET for Apache Spark. THe samples cover:
+In this repo, we have various example implementations of .NET for Apache Spark. These examples cover:
 
 Sample | Language
 :--- | :---
