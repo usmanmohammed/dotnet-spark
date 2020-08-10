@@ -21,10 +21,7 @@ To get started, you'll need to download the following dependencies.
 1. Download [Apache Spark 2.4.1]().
 1. Create a directory e.g `C:\bin\`
 2. Extract contents of the downloaded Apache Spark archive into directory `C:\bin\spark-2.4.1-bin-hadoop2.7`
-3. Create `SPARK_HOME` environment variable and set its value to the Apache Spark directory.
-    ```sh
-    setx SPARK_HOME "C:\bin\spark-2.4.1-bin-hadoop2.7"
-    ```
+3. Create `SPARK_HOME` environment variable and set its value to the Apache Spark directory `setx SPARK_HOME "C:\bin\spark-2.4.1-bin-hadoop2.7"`
 4. Create `HADOOP_HOME` environment variable and set its value to the Apache Spark directory.
     ```sh
     setx SPARK_HOME "C:\bin\spark-2.4.1-bin-hadoop2.7"
