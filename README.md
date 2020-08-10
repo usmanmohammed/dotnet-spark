@@ -20,7 +20,7 @@ To get started, you'll need to download the following dependencies.
 #### Windows
 1. Download [Apache Spark 2.4.1]().
 1. Create a directory e.g `C:\bin\`
-2. Extract the downloaded Apache Spark archive into directory `C:\bin\spark-2.4.1-bin-hadoop2.7`
+2. Extract contents of the downloaded Apache Spark archive into directory `C:\bin\spark-2.4.1-bin-hadoop2.7`
 3. Create `SPARK_HOME` environment variable and set its value to the Apache Spark directory.
     ```sh
     setx SPARK_HOME "C:\bin\spark-2.4.1-bin-hadoop2.7"
@@ -36,7 +36,7 @@ To get started, you'll need to download the following dependencies.
 #### Linux
 
 1. Download [Apache Spark 2.4.1]().
-1. Extract the downloaded Apache Spark archive into directory `~/bin/spark-2.4.1-bin-hadoop2.7`
+1. Extract contents of the downloaded Apache Spark archive into directory `~/bin/spark-2.4.1-bin-hadoop2.7`
 2. Create `SPARK_HOME` environment variable and set its value to the Apache Spark directory.
     ```sh
     export SPARK_HOME="~/bin/spark-2.4.1-bin-hadoop2.7"
@@ -53,33 +53,49 @@ To get started, you'll need to download the following dependencies.
 ### .NET Core 3.1 SDK
 #### Windows
 1. Download and install [.NET Core 3.1 SDK]().
-5. Verify .NET installation.
+5. Verify .NET Core SDK installation.
     ```sh
     dotnet --version
     ```
 #### Linux
 
 1. Follow the instructions here: [Install .NET Core on Linux]().
-4. Verify Apache Spark and Hadoop installation.
+4. Verify .NET Core SDK installation.
     ```sh
     dotnet --version
     ```
 
-### Java Development Kit 8
+### JDK 8
 #### Windows
 1. Download and install [Java SE Development Kit 8](https://www.oracle.com/pt/java/technologies/javase/javase-jdk8-downloads.html).
-5. Verify .NET installation.
+5. Verify JDK installation.
     ```sh
     java --version
     ```
 #### Linux
 
 1. Follow the instructions here: [Open JDK: Download and install](https://openjdk.java.net/install/).
-4. Verify Apache Spark and Hadoop installation.
+4. Verify Apache JDK installation.
     ```sh
     java --version
     ```
+### Microsoft.Spark.Worker
+#### Windows
+1. Download [Microsoft.Spark.Worker]().
+2. Extract contents of the downloaded archive into directory `C:\bin\Microsoft.Spark.Worker`
+3. Create `DOTNET_WORKER_DIR` environment variable and set its value to Microsoft.Spark.Worker directory.
+    ```sh
+    setx DOTNET_WORKER_DIR "C:\bin\Microsoft.Spark.Worker"
+    ```
+#### Linux
 
+1. Download [Microsoft.Spark.Worker]().
+2. Extract contents of the downloaded archive into directory `~/bin/Microsoft.Spark.Worker`
+3. Create `DOTNET_WORKER_DIR` environment variable and set its value to Microsoft.Spark.Worker directory.
+    ```sh
+    export DOTNET_WORKER_DIR="~/bin/Microsoft.Spark.Worker"
+    ```
+  
 
 ## Clone this Repo
 
