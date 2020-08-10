@@ -9,9 +9,7 @@ Sample | Language
 :--- | :---
 Azure Blob Storage | [C#](), &nbsp; [F#]()
 
-## Getting Started
-
-### Download and Install Prerequisites
+## Download and Install Prerequisites
 To get started, you'll need to download the following dependencies.
  1. [Apache Spark 2.4.1]()
  2. [.NET Core 3.1 SDK]()
