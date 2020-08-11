@@ -21,11 +21,7 @@ To get started, you'll need the following installed on your machine.
 
 1. Download [Apache Spark 2.4.1]().
 1. Extract contents of the downloaded Apache Spark archive into the following directory.
-
-    Linux | Windows
-    :--- | :---
-    <code>~/bin/spark-2.4.1-bin-hadoop2.7</code> | <code>C:\bin\spark-2.4.1-bin-hadoop2.7</code>
-    
+  
     **Linux** 
     ```sh
     ~/bin/spark-2.4.1-bin-hadoop2.7
