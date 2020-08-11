@@ -22,31 +22,31 @@ To get started, you'll need the following installed on your machine.
 1. Download [Apache Spark 2.4.1]().
 1. Extract contents of the downloaded Apache Spark archive into the following directory.
 
-    **Linux**
+    Linux | Windows
+    :--- | :---
+    <code>~/bin/spark-2.4.1-bin-hadoop2.7</code> | <code>C:\bin\spark-2.4.1-bin-hadoop2.7</code>
+    
+    **Linux** 
     ```sh
     ~/bin/spark-2.4.1-bin-hadoop2.7
-    ```
-    
+    ```  
     **Windows**
     ```sh
     C:\bin\spark-2.4.1-bin-hadoop2.7
-    ```
-    
+    ``` 
 3. Create `SPARK_HOME` and `HADOOP_HOME` environment variables and set their values to the Apache Spark directory.
-
-    **Linux**
+    
+    **Linux**    
     ```sh
     export SPARK_HOME="~/bin/spark-2.4.1-bin-hadoop2.7"
     export HADOOP_HOME="~/bin/spark-2.4.1-bin-hadoop2.7"
-    ```
-    
-    **Windows**
+    ``` 
+    **Windows**    
     ```sh
     setx SPARK_HOME "C:\bin\spark-2.4.1-bin-hadoop2.7"
     setx HADOOP_HOME "C:\bin\spark-2.4.1-bin-hadoop2.7"
     ```
 4. Verify Apache Spark and Hadoop installation.
-    
     ```sh
     spark-shell --version
     ```
@@ -72,7 +72,6 @@ To get started, you'll need the following installed on your machine.
     ```
     
 ### Microsoft.Spark.Worker
-#### Windows
 1. Download [Microsoft.Spark.Worker]().
 1. Extract contents of the downloaded archive into the following directory.
 
