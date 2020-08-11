@@ -158,3 +158,24 @@ To get started, you'll need the following installed on your machine.
     --master local microsoft-spark-2.4.x-0.10.0.jar ^
     mySparkBlobStorageApp %AZURE_STORAGE_ACCOUNT% %AZURE_STORAGE_KEY%
     ```
+    
+## Contributing
+
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+<!-- CONTACT -->
+## Contact
+
+Usman Mohammed - [@usmnmohammed](https://twitter.com/usmnmohammed)
+
+Project Link: [https://github.com/usmanmohammed/dotnet-spark-samples](https://github.com/usmanmohammed/dotnet-spark-samples)
