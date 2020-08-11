@@ -95,8 +95,7 @@ To get started, you'll need the following installed on your machine.
 3. Create `DOTNET_WORKER_DIR` environment variable and set its value to Microsoft.Spark.Worker directory.
     ```sh
     setx DOTNET_WORKER_DIR "C:\bin\Microsoft.Spark.Worker"
-    ```
-
+    ``` 
 ## Clone this Repo
 
 ## Build the Solution
