@@ -78,9 +78,15 @@ To get started, you'll need the following installed on your machine.
     ```sh
     java --version
     ```
-
+    
 ### Microsoft.Spark.Worker
-
+#### Windows
+1. Download [Microsoft.Spark.Worker]().
+2. Extract contents of the downloaded archive into directory `C:\bin\Microsoft.Spark.Worker`
+3. Create `DOTNET_WORKER_DIR` environment variable and set its value to Microsoft.Spark.Worker directory.
+    ```sh
+    setx DOTNET_WORKER_DIR "C:\bin\Microsoft.Spark.Worker"
+    ```
 #### Linux
 
 1. Download [Microsoft.Spark.Worker]().
@@ -89,15 +95,60 @@ To get started, you'll need the following installed on your machine.
     ```sh
     export DOTNET_WORKER_DIR="~/bin/Microsoft.Spark.Worker"
     ```
-#### Windows
-1. Download [Microsoft.Spark.Worker]().
-2. Extract contents of the downloaded archive into directory `C:\bin\Microsoft.Spark.Worker`
-3. Create `DOTNET_WORKER_DIR` environment variable and set its value to Microsoft.Spark.Worker directory.
+
+## Build Samples
+
+1. Clone the repo
     ```sh
-    setx DOTNET_WORKER_DIR "C:\bin\Microsoft.Spark.Worker"
-    ``` 
-## Clone this Repo
+    git clone https://github.com/usmanmohammed/dotnet-spark-samples.git
+    ```
+2. Navigate to the solution directory
+    ```sh
+    cd dotnet-spark-samples
+    ```
+3. Restore and build the solution
+    ```sh
+    dotnet build
+    ```
 
-## Build the Solution
+## Run Sample
 
-## Run the Apps
+### Azure Blob Storage
+1. Get your Azure Blob Storage Access Key. This can be accessed from the Azure Portal.
+2. Create environment variables for your Blob Storage Account Name (`AZURE_STORAGE_ACCOUNT`) and Access Key (`AZURE_STORAGE_KEY`):
+<br>**Linux**
+    ```sh
+    export $AZURE_STORAGE_ACCOUNT="<storage-account-name>"
+    export $AZURE_STORAGE_KEY="<storage-account-key>"
+    ```
+    **Windows**
+    ```sh
+    setx AZURE_STORAGE_ACCOUNT "<storage-account-name>"
+    setx AZURE_STORAGE_KEY "<storage-account-key>"
+    ```
+3. Go to build output directory
+<br><br>**Linux**
+    ```sh
+    cd /xyz/abc/rrm
+    ```
+    **Windows**
+    ```sh
+    cd \xyz\abc\rrm
+    ```
+4. Submit application to run on Apache Spark
+<br><br>**Linux**
+    ```sh
+    spark-submit \
+    --packages org.apache.hadoop:hadoop-azure:2.7.3,com.microsoft.azure:azure-storage:3.1.0 \
+    --class org.apache.spark.deploy.dotnet.DotnetRunner \
+    --master local microsoft-spark-2.4.x-0.10.0.jar \
+    ./mySparkBlobStorageApp $AZURE_STORAGE_ACCOUNT $AZURE_STORAGE_KEY
+    ```
+    **Windows**
+    ```sh
+    spark-submit ^
+    --packages org.apache.hadoop:hadoop-azure:2.7.3,com.microsoft.azure:azure-storage:3.1.0 ^
+    --class org.apache.spark.deploy.dotnet.DotnetRunner ^
+    --master local microsoft-spark-2.4.x-0.10.0.jar ^
+    mySparkBlobStorageApp %AZURE_STORAGE_ACCOUNT% %AZURE_STORAGE_KEY%
+    ```
