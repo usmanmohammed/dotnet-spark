@@ -101,14 +101,17 @@ To get started, you'll need the following installed on your machine.
 ## Build Samples
 
 1. Clone the repo.
+
     ```sh
     git clone https://github.com/usmanmohammed/dotnet-spark-samples.git
     ```
 2. Navigate to the solution directory.
+
     ```sh
     cd dotnet-spark-samples
     ```
 3. Restore and build the solution.
+
     ```sh
     dotnet build
     ```
