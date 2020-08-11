@@ -18,63 +18,55 @@ To get started, you'll need the following installed on your machine.
 
 ## Install Prerequisites
 ### Apache Spark 2.4.1
-#### Linux
 
 1. Download [Apache Spark 2.4.1]().
-1. Extract contents of the downloaded Apache Spark archive into directory `~/bin/spark-2.4.1-bin-hadoop2.7`
-3. Create `SPARK_HOME` and `HADOOP_HOME` environment variables and set their values to the Apache Spark directory 
+1. Extract contents of the downloaded Apache Spark archive into the following directory.
+
+    **Linux**
+    ```sh
+    ~/bin/spark-2.4.1-bin-hadoop2.7
+    ```
+    
+    **Windows**
+    ```sh
+    C:\bin\spark-2.4.1-bin-hadoop2.7
+    ```
+    
+3. Create `SPARK_HOME` and `HADOOP_HOME` environment variables and set their values to the Apache Spark directory.
+
+    **Linux**
     ```sh
     export SPARK_HOME="~/bin/spark-2.4.1-bin-hadoop2.7"
     export HADOOP_HOME="~/bin/spark-2.4.1-bin-hadoop2.7"
     ```
-4. Verify Apache Spark and Hadoop installation.
+    
+    **Windows**
     ```sh
-    spark-shell --version
+    setx SPARK_HOME "C:\bin\spark-2.4.1-bin-hadoop2.7"
+    setx HADOOP_HOME "C:\bin\spark-2.4.1-bin-hadoop2.7"
     ```
-
-#### Windows
-1. Download [Apache Spark 2.4.1]().
-1. Create a directory e.g `C:\bin\`
-2. Extract contents of the downloaded Apache Spark archive into directory `C:\bin\spark-2.4.1-bin-hadoop2.7`
-3. Create `SPARK_HOME` and `HADOOP_HOME` environment variables and set their values to the Apache Spark directory 
-   ```sh
-   setx SPARK_HOME "C:\bin\spark-2.4.1-bin-hadoop2.7"
-   setx HADOOP_HOME "C:\bin\spark-2.4.1-bin-hadoop2.7"
-    ```
-5. Verify Spark and Hadoop installation.
+4. Verify Apache Spark and Hadoop installation.
+    
     ```sh
     spark-shell --version
     ```
 
 ### .NET Core 3.1 SDK
-#### Linux
 
-1. Follow the instructions here: [Install .NET Core on Linux]().
+1. Follow the instructions here: [Install .NET Core on Linux]() or [.NET Core 3.1 SDK]() for Windows.
 4. Verify .NET Core SDK installation.
-    ```sh
-    dotnet --version
-    ```
-#### Windows
-
-1. Download and install [.NET Core 3.1 SDK]().
-5. Verify .NET Core SDK installation.
+    
     ```sh
     dotnet --version
     ```
 
 ### JDK 8
+1. Follow the instructions here: 
+    - Windows: [Open JDK: Download and install](https://openjdk.java.net/install/).
+    - Linux: [Java SE Development Kit 8](https://www.oracle.com/pt/java/technologies/javase/javase-jdk8-downloads.html).
 
-#### Linux
-
-1. Follow the instructions here: [Open JDK: Download and install](https://openjdk.java.net/install/).
-4. Verify Apache JDK installation.
-    ```sh
-    java --version
-    ```
-
-#### Windows
-1. Download and install [Java SE Development Kit 8](https://www.oracle.com/pt/java/technologies/javase/javase-jdk8-downloads.html).
-5. Verify JDK installation.
+4. Verify JDK installation.
+    
     ```sh
     java --version
     ```
@@ -82,31 +74,41 @@ To get started, you'll need the following installed on your machine.
 ### Microsoft.Spark.Worker
 #### Windows
 1. Download [Microsoft.Spark.Worker]().
-2. Extract contents of the downloaded archive into directory `C:\bin\Microsoft.Spark.Worker`
-3. Create `DOTNET_WORKER_DIR` environment variable and set its value to Microsoft.Spark.Worker directory.
-    ```sh
-    setx DOTNET_WORKER_DIR "C:\bin\Microsoft.Spark.Worker"
-    ```
-#### Linux
+1. Extract contents of the downloaded archive into the following directory.
 
-1. Download [Microsoft.Spark.Worker]().
-2. Extract contents of the downloaded archive into directory `~/bin/Microsoft.Spark.Worker`
+    **Linux**
+    ```sh
+    ~/bin/Microsoft.Spark.Worker
+    ```
+
+    **Windows**
+    ```sh
+    C:\bin\Microsoft.Spark.Worker
+    ```
+    
 3. Create `DOTNET_WORKER_DIR` environment variable and set its value to Microsoft.Spark.Worker directory.
+
+    **Linux**
     ```sh
     export DOTNET_WORKER_DIR="~/bin/Microsoft.Spark.Worker"
     ```
 
+    **Windows**
+    ```sh
+    setx DOTNET_WORKER_DIR "C:\bin\Microsoft.Spark.Worker"
+    ```
+
 ## Build Samples
 
-1. Clone the repo
+1. Clone the repo.
     ```sh
     git clone https://github.com/usmanmohammed/dotnet-spark-samples.git
     ```
-2. Navigate to the solution directory
+2. Navigate to the solution directory.
     ```sh
     cd dotnet-spark-samples
     ```
-3. Restore and build the solution
+3. Restore and build the solution.
     ```sh
     dotnet build
     ```
@@ -115,28 +117,33 @@ To get started, you'll need the following installed on your machine.
 
 ### Azure Blob Storage
 1. Get your Azure Blob Storage Access Key. This can be accessed from the Azure Portal.
-2. Create environment variables for your Blob Storage Account Name (`AZURE_STORAGE_ACCOUNT`) and Access Key (`AZURE_STORAGE_KEY`):
-<br>**Linux**
+2. Create environment variables for your Blob Storage Account Name (`AZURE_STORAGE_ACCOUNT`) and Access Key (`AZURE_STORAGE_KEY`).
+
+    **Linux**
     ```sh
     export $AZURE_STORAGE_ACCOUNT="<storage-account-name>"
     export $AZURE_STORAGE_KEY="<storage-account-key>"
     ```
+
     **Windows**
     ```sh
     setx AZURE_STORAGE_ACCOUNT "<storage-account-name>"
     setx AZURE_STORAGE_KEY "<storage-account-key>"
     ```
-3. Go to build output directory
-<br><br>**Linux**
+3. Go to build output directory.
+    
+    **Linux**
     ```sh
     cd /xyz/abc/rrm
     ```
+
     **Windows**
     ```sh
     cd \xyz\abc\rrm
     ```
 4. Submit application to run on Apache Spark
-<br><br>**Linux**
+    
+    **Linux**
     ```sh
     spark-submit \
     --packages org.apache.hadoop:hadoop-azure:2.7.3,com.microsoft.azure:azure-storage:3.1.0 \
@@ -144,6 +151,7 @@ To get started, you'll need the following installed on your machine.
     --master local microsoft-spark-2.4.x-0.10.0.jar \
     ./mySparkBlobStorageApp $AZURE_STORAGE_ACCOUNT $AZURE_STORAGE_KEY
     ```
+
     **Windows**
     ```sh
     spark-submit ^
