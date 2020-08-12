@@ -1,4 +1,4 @@
-# .NET for Apache Spark Examples
+# .NET for Apache Spark Samples
 Example implementations of .NET for Apache Spark.
 
 ![.NET Core](https://github.com/usmanmohammed/dotnet-spark-samples/workflows/.NET%20Core/badge.svg?branch=master)
@@ -7,19 +7,19 @@ In this repo, we have various example implementations of .NET for Apache Spark. 
 
 Sample | Language
 :--- | :---
-Azure Blob Storage | [C#](), &nbsp; [F#]()
+Azure Blob Storage | [C#](#src/Dotnet.Spark.Examples/Dotnet.Spark.CSharp.Examples.AzureStorage), &nbsp; [F#](src/Dotnet.Spark.Examples/Dotnet.Spark.FSharp.Examples.AzureStorage)
 
 ## Prerequisites
 To get started, you'll need the following installed on your machine.
- 1. [Apache Spark 2.4.1]()
- 2. [.NET Core 3.1 SDK]()
- 3. [JDK/OpenJDK 8]()
- 4. [Microsoft.Spark.Worker]()
+ 1. [Apache Spark 2.4.1](https://spark.apache.org/downloads.html)
+ 2. [.NET Core 3.1 SDK](https://dotnet.microsoft.com/download/dotnet-core/3.1)
+ 3. [JDK/OpenJDK 8](https://www.oracle.com/uk/java/technologies/javase/javase-jdk8-downloads.html)
+ 4. [Microsoft.Spark.Worker](https://github.com/dotnet/spark/releases/download/v0.10.0/Microsoft.Spark.Worker.netcoreapp3.1.win-x64-0.10.0.zip)
 
 ## Install Prerequisites
 ### Apache Spark 2.4.1
 
-1. Download [Apache Spark 2.4.1]().
+1. Download [Apache Spark 2.4.1](https://spark.apache.org/downloads.html).
 1. Extract contents of the downloaded Apache Spark archive into the following directory.
   
     **Linux** 
@@ -49,7 +49,7 @@ To get started, you'll need the following installed on your machine.
 
 ### .NET Core 3.1 SDK
 
-1. Follow the instructions here: [Install .NET Core on Linux]() or [.NET Core 3.1 SDK]() for Windows.
+1. Follow the instructions here: [Install .NET Core on Linux](https://docs.microsoft.com/en-us/dotnet/core/install/linux) or [.NET Core 3.1 SDK](https://dotnet.microsoft.com/download/dotnet-core/3.1) for Windows.
 4. Verify .NET Core SDK installation.
     
     ```sh
@@ -68,7 +68,7 @@ To get started, you'll need the following installed on your machine.
     ```
     
 ### Microsoft.Spark.Worker
-1. Download [Microsoft.Spark.Worker]().
+1. Download [Microsoft.Spark.Worker](https://github.com/dotnet/spark/releases/download/v0.10.0/Microsoft.Spark.Worker.netcoreapp3.1.win-x64-0.10.0.zip).
 1. Extract contents of the downloaded archive into the following directory.
 
     **Linux**
@@ -161,25 +161,8 @@ To get started, you'll need the following installed on your machine.
     
 ## Contributing
 
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-1. Fork the Project
-
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-
-5. Open a Pull Request
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contribution is welcomed.
 
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
-
-<!-- CONTACT -->
-## Contact
-
-Usman Mohammed - [@usmnmohammed](https://twitter.com/usmnmohammed)
-
-Project Link: [https://github.com/usmanmohammed/dotnet-spark-samples](https://github.com/usmanmohammed/dotnet-spark-samples)
