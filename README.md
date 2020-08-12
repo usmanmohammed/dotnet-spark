@@ -132,12 +132,13 @@ To get started, you'll need the following installed on your machine.
     
     **Linux**
     ```sh
-    cd /xyz/abc/rrm
+    cd src/Dotnet.Spark.Examples/Dotnet.Spark.CSharp.Examples.AzureStorage/bin\
+    /Debug/netcoreapp3.1
     ```
 
     **Windows**
     ```sh
-    cd \xyz\abc\rrm
+    cd .\src\Dotnet.Spark.Examples\Dotnet.Spark.CSharp.Examples.AzureStorage\bin\Debug\netcoreapp3.1
     ```
 4. Submit application to run on Apache Spark
     
