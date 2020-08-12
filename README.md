@@ -7,14 +7,14 @@ In this repo, we have various example implementations of .NET for Apache Spark. 
 
 Sample | Language
 :--- | :---
-Azure Blob Storage | [C#](#src/Dotnet.Spark.Examples/Dotnet.Spark.CSharp.Examples.AzureStorage), &nbsp; [F#](src/Dotnet.Spark.Examples/Dotnet.Spark.FSharp.Examples.AzureStorage)
+Azure Blob Storage | [C#](https://github.com/usmanmohammed/dotnet-spark-samples/tree/master/src/Dotnet.Spark.Examples/Dotnet.Spark.CSharp.Examples.AzureStorage), &nbsp; [F#](https://github.com/usmanmohammed/dotnet-spark-samples/tree/master/src/Dotnet.Spark.Examples/Dotnet.Spark.FSharp.Examples.AzureStorage)
 
 ## Prerequisites
 To get started, you'll need the following installed on your machine.
  1. [Apache Spark 2.4.1](https://spark.apache.org/downloads.html)
  2. [.NET Core 3.1 SDK](https://dotnet.microsoft.com/download/dotnet-core/3.1)
- 3. [JDK / OpenJDK 8](https://www.oracle.com/uk/java/technologies/javase/javase-jdk8-downloads.html)
- 4. [Microsoft.Spark.Worker](https://github.com/dotnet/spark/releases/download/v0.12.1/Microsoft.Spark.Worker.netcoreapp3.1.win-x64-0.12.1.zip)
+ 3. [JDK 8](https://www.oracle.com/uk/java/technologies/javase/javase-jdk8-downloads.html)
+ 4. [Microsoft.Spark.Worker 0.12.1](https://github.com/dotnet/spark/releases/download/v0.12.1/Microsoft.Spark.Worker.netcoreapp3.1.win-x64-0.12.1.zip)
 
 ## Install Prerequisites
 ### Apache Spark 2.4.1
@@ -67,8 +67,8 @@ To get started, you'll need the following installed on your machine.
     java -version
     ```
     
-### Microsoft.Spark.Worker
-1. Download [Microsoft.Spark.Worker](https://github.com/dotnet/spark/releases/download/v0.12.1/Microsoft.Spark.Worker.netcoreapp3.1.win-x64-0.12.1.zip).
+### Microsoft.Spark.Worker 0.12.1
+1. Download [Microsoft.Spark.Worker 0.12.1](https://github.com/dotnet/spark/releases/download/v0.12.1/Microsoft.Spark.Worker.netcoreapp3.1.win-x64-0.12.1.zip).
 1. Extract contents of the downloaded archive into the following directory.
 
     **Linux**
@@ -161,7 +161,7 @@ To get started, you'll need the following installed on your machine.
     
 ## Contributing
 
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contribution is welcomed.
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Contributions are highly welcomed.
 
 ## License
 
