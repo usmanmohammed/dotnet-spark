@@ -13,10 +13,10 @@ Azure Blob Storage | [C#](https://github.com/usmanmohammed/dotnet-spark-samples/
 The following guide will show you how to get samples up and running on your local machine.
 ### Prerequisites
 To get started, you'll need the following installed on your machine.
- 1. [Apache Spark 2.4.1](https://spark.apache.org/downloads.html)
- 2. [.NET Core 3.1 SDK](https://dotnet.microsoft.com/download/dotnet-core/3.1)
- 3. [JDK 8](https://www.oracle.com/uk/java/technologies/javase/javase-jdk8-downloads.html)
- 4. [Microsoft.Spark.Worker 0.12.1](https://github.com/dotnet/spark/releases/download/v0.12.1/Microsoft.Spark.Worker.netcoreapp3.1.win-x64-0.12.1.zip)
+ 1. Apache Spark 2.4.1
+ 2. .NET Core 3.1 SDK
+ 3. JDK 8
+ 4. Microsoft.Spark.Worker 0.12.1
 
 ### Install Prerequisites
 #### Apache Spark 2.4.1
