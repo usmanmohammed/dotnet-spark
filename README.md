@@ -164,6 +164,7 @@ To get started, you'll need the following installed on your machine.
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Feel free to open a PR.
+
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
