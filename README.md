@@ -13,8 +13,8 @@ Azure Blob Storage | [C#](#src/Dotnet.Spark.Examples/Dotnet.Spark.CSharp.Example
 To get started, you'll need the following installed on your machine.
  1. [Apache Spark 2.4.1](https://spark.apache.org/downloads.html)
  2. [.NET Core 3.1 SDK](https://dotnet.microsoft.com/download/dotnet-core/3.1)
- 3. [JDK/OpenJDK 8](https://www.oracle.com/uk/java/technologies/javase/javase-jdk8-downloads.html)
- 4. [Microsoft.Spark.Worker](https://github.com/dotnet/spark/releases/download/v0.10.0/Microsoft.Spark.Worker.netcoreapp3.1.win-x64-0.10.0.zip)
+ 3. [JDK / OpenJDK 8](https://www.oracle.com/uk/java/technologies/javase/javase-jdk8-downloads.html)
+ 4. [Microsoft.Spark.Worker](https://github.com/dotnet/spark/releases/download/v0.12.1/Microsoft.Spark.Worker.netcoreapp3.1.win-x64-0.12.1.zip)
 
 ## Install Prerequisites
 ### Apache Spark 2.4.1
@@ -64,11 +64,11 @@ To get started, you'll need the following installed on your machine.
 4. Verify JDK installation.
     
     ```sh
-    java --version
+    java -version
     ```
     
 ### Microsoft.Spark.Worker
-1. Download [Microsoft.Spark.Worker](https://github.com/dotnet/spark/releases/download/v0.10.0/Microsoft.Spark.Worker.netcoreapp3.1.win-x64-0.10.0.zip).
+1. Download [Microsoft.Spark.Worker](https://github.com/dotnet/spark/releases/download/v0.12.1/Microsoft.Spark.Worker.netcoreapp3.1.win-x64-0.12.1.zip).
 1. Extract contents of the downloaded archive into the following directory.
 
     **Linux**
@@ -132,22 +132,21 @@ To get started, you'll need the following installed on your machine.
     
     **Linux**
     ```sh
-    cd src/Dotnet.Spark.Examples/Dotnet.Spark.CSharp.Examples.AzureStorage/bin\
-    /Debug/netcoreapp3.1
+    cd src/Dotnet.Spark.Examples/Dotnet.Spark.CSharp.Examples.AzureStorage/bin/Debug/netcoreapp3.1
     ```
 
     **Windows**
     ```sh
     cd .\src\Dotnet.Spark.Examples\Dotnet.Spark.CSharp.Examples.AzureStorage\bin\Debug\netcoreapp3.1
     ```
-4. Submit application to run on Apache Spark
+4. Submit application to run on Apache Spark.
     
     **Linux**
     ```sh
     spark-submit \
     --packages org.apache.hadoop:hadoop-azure:2.7.3,com.microsoft.azure:azure-storage:3.1.0 \
     --class org.apache.spark.deploy.dotnet.DotnetRunner \
-    --master local microsoft-spark-2.4.x-0.10.0.jar \
+    --master local microsoft-spark-2.4.x-0.12.1.jar \
     ./mySparkBlobStorageApp $AZURE_STORAGE_ACCOUNT $AZURE_STORAGE_KEY
     ```
 
@@ -156,7 +155,7 @@ To get started, you'll need the following installed on your machine.
     spark-submit ^
     --packages org.apache.hadoop:hadoop-azure:2.7.3,com.microsoft.azure:azure-storage:3.1.0 ^
     --class org.apache.spark.deploy.dotnet.DotnetRunner ^
-    --master local microsoft-spark-2.4.x-0.10.0.jar ^
+    --master local microsoft-spark-2.4.x-0.12.1.jar ^
     mySparkBlobStorageApp %AZURE_STORAGE_ACCOUNT% %AZURE_STORAGE_KEY%
     ```
     
