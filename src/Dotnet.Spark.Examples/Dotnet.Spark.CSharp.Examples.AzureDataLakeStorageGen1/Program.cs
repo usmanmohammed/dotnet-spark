@@ -10,7 +10,7 @@ namespace Dotnet.Spark.CSharp.Examples.AzureDataLakeStorageGen1
         static void Main(string[] args)
         {
             // Verify environment variables
-            if (args.Length != 3)
+            if (args.Length != 4)
             {
                 Console.Error.WriteLine("Usage: $TENANT_ID $ADLS_NAME $ADLS_SP_CLIENT_ID $ADLS_SP_CLIENT_SECRET");
                 Environment.Exit(1);
