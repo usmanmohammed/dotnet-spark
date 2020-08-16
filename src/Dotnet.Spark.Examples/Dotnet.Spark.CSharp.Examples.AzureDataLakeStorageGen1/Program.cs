@@ -10,22 +10,26 @@ namespace Dotnet.Spark.CSharp.Examples.AzureDataLakeStorageGen1
         static void Main(string[] args)
         {
             // Verify environment variables
-            if (args.Length != 2)
-            {
-                Console.Error.WriteLine("Usage: $ADLS_SP_CLIENT_ID $ADLS_SP_CLIENT_SECRET");
-                Environment.Exit(1);
-            }
+            // if (args.Length != 2)
+            // {
+            //     Console.Error.WriteLine("Usage: $ADLS_SP_CLIENT_ID $ADLS_SP_CLIENT_SECRET");
+            //     Environment.Exit(1);
+            // }
 
             // Specify file path in Azure Storage
             string filePath =
-                $"wasbs://dotnet-spark@{args[0]}.blob.core.windows.net/json/people.json";
+                $"adl://dynamicdevdemo.azuredatalakestore.net/json/people.json";
 
             // Create SparkSession
             SparkSession spark = SparkSession
                 .Builder()
                 .AppName("Azure Storage example using .NET for Apache Spark")
-                .Config("fs.wasbs.impl", "org.apache.hadoop.fs.azure.NativeAzureFileSystem")
-                .Config($"fs.azure.account.key.{args[0]}.blob.core.windows.net", args[1])
+                .Config("fs.adl.impl", "org.apache.hadoop.fs.adl.AdlFileSystem")
+                .Config("fs.AbstractFileSystem.adl.impl", "org.apache.hadoop.fs.adl.Adl")
+                .Config("fs.adl.oauth2.access.token.provider.type", "ClientCredential")
+                .Config("fs.adl.oauth2.client.id", "")
+                .Config("fs.adl.oauth2.credential", "")
+                .Config("fs.adl.oauth2.refresh.url", "https://login.microsoftonline.com/<directory-id>/oauth2/token")
                 .GetOrCreate();
 
             // Create sample data
