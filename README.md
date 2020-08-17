@@ -166,14 +166,14 @@ To get started, you'll need the following installed on your machine.
 ### Azure Data Lake Storage Gen1
 
 1. Create a Service Principal on Azure Active Directory (AAD).
-2. Grant Service Principal Read/Write/Execute access in the Data Lake Storage account.
+2. Grant Service Principal Read/Write/Execute access to the Data Lake Storage account. This can be configured in the account's IAM Settings.
 3. Retrieve the AAD Tenant (Directory) ID, Service Principal Client (Application) ID, Client Secret, and Data Lake Storage name.
 2. Create environment variables for your Tenant ID (`TENANT_ID`), Data Lake name (`ADLS_NAME`), Service Principal Client ID (`ADLS_SP_CLIENT_ID`) and Client Secret (`ADLS_SP_CLIENT_SECRET`).
 
     **Linux**
     ```sh
     export $TENANT_ID="<aad-tenant-id>"
-    export $ADLS_NAME="<datalake-gen1-name>"
+    export $ADLS_NAME="<data-lake-gen1-name>"
     export $ADLS_SP_CLIENT_ID="<service-principal-client-id>"
     export $ADLS_SP_CLIENT_SECRET="<service-principal-client-key>"
     ```
@@ -181,7 +181,7 @@ To get started, you'll need the following installed on your machine.
     **Windows**
     ```sh
     setx TENANT_ID "<aad-tenant-id>"
-    setx ADLS_NAME "<datalake-gen1-name>"
+    setx ADLS_NAME "<data-lake-gen1-name>"
     setx ADLS_SP_CLIENT_ID "<service-principal-client-id>"
     setx ADLS_SP_CLIENT_SECRET "<service-principal-client-key>"
     ```
