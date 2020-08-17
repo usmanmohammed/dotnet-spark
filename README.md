@@ -150,7 +150,7 @@ To get started, you'll need the following installed on your machine.
     --packages org.apache.hadoop:hadoop-azure:2.7.3,com.microsoft.azure:azure-storage:3.1.0 \
     --class org.apache.spark.deploy.dotnet.DotnetRunner \
     --master local microsoft-spark-2.4.x-0.12.1.jar \
-    ./mySparkBlobStorageApp $AZURE_STORAGE_ACCOUNT $AZURE_STORAGE_KEY
+    ./Dotnet.Spark.CSharp.Examples.AzureStorage $AZURE_STORAGE_ACCOUNT $AZURE_STORAGE_KEY
     ```
 
     **Windows**
@@ -159,7 +159,7 @@ To get started, you'll need the following installed on your machine.
     --packages org.apache.hadoop:hadoop-azure:2.7.3,com.microsoft.azure:azure-storage:3.1.0 ^
     --class org.apache.spark.deploy.dotnet.DotnetRunner ^
     --master local microsoft-spark-2.4.x-0.12.1.jar ^
-    mySparkBlobStorageApp %AZURE_STORAGE_ACCOUNT% %AZURE_STORAGE_KEY%
+    Dotnet.Spark.CSharp.Examples.AzureStorage %AZURE_STORAGE_ACCOUNT% %AZURE_STORAGE_KEY%
     ```
     
 
