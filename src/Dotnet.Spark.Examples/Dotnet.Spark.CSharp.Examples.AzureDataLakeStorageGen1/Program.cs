@@ -18,12 +18,12 @@ namespace Dotnet.Spark.CSharp.Examples.AzureDataLakeStorageGen1
 
             // Specify file path in Azure Data Lake Gen 1
             string filePath =
-                $"adl://{args[1]}.azuredatalakestore.net/json/people.json";
+                $"adl://{args[1]}.azuredatalakestore.net/parquet/people.parquet";
 
             // Create SparkSession
             SparkSession spark = SparkSession
                 .Builder()
-                .AppName("Azure Storage example using .NET for Apache Spark")
+                .AppName("Azure Data Lake Store example using .NET for Apache Spark")
                 .Config("fs.adl.impl", "org.apache.hadoop.fs.adl.AdlFileSystem")
                 .Config("fs.adl.oauth2.access.token.provider.type", "ClientCredential")
                 .Config("fs.adl.oauth2.client.id", args[2])
@@ -53,10 +53,10 @@ namespace Dotnet.Spark.CSharp.Examples.AzureDataLakeStorageGen1
             df.Show();
 
             // Write DataFrame to Azure Data Lake Gen 1
-            df.Write().Mode(SaveMode.Overwrite).Json(filePath);
+            df.Write().Mode(SaveMode.Overwrite).Parquet(filePath);
 
             // Read saved DataFrame from Azure Data Lake Gen 1
-            DataFrame readDf = spark.Read().Json(filePath);
+            DataFrame readDf = spark.Read().Parquet(filePath);
 
             // Print DataFrame
             readDf.Show();
