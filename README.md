@@ -8,6 +8,7 @@ In this repo, we have various example implementations of .NET for Apache Spark. 
 Sample | Language
 :--- | :---
 Azure Blob Storage | [C#](https://github.com/usmanmohammed/dotnet-spark-samples/tree/master/src/Dotnet.Spark.Examples/Dotnet.Spark.CSharp.Examples.AzureStorage), &nbsp; [F#](https://github.com/usmanmohammed/dotnet-spark-samples/tree/master/src/Dotnet.Spark.Examples/Dotnet.Spark.FSharp.Examples.AzureStorage)
+Azure Data Lake Storage Gen1 | [C#](https://github.com/usmanmohammed/dotnet-spark-samples/tree/master/src/Dotnet.Spark.Examples/Dotnet.Spark.CSharp.Examples.AzureDataLakeStorageGen1), &nbsp; [F#](https://github.com/usmanmohammed/dotnet-spark-samples/tree/master/src/Dotnet.Spark.Examples/Dotnet.Spark.FSharp.Examples.AzureDataLakeStorageGen1)
 
 ## Getting Started
 The following guide will show you how to get samples up and running on your local machine.
@@ -149,7 +150,7 @@ To get started, you'll need the following installed on your machine.
     --packages org.apache.hadoop:hadoop-azure:2.7.3,com.microsoft.azure:azure-storage:3.1.0 \
     --class org.apache.spark.deploy.dotnet.DotnetRunner \
     --master local microsoft-spark-2.4.x-0.12.1.jar \
-    ./mySparkBlobStorageApp $AZURE_STORAGE_ACCOUNT $AZURE_STORAGE_KEY
+    ./Dotnet.Spark.CSharp.Examples.AzureStorage $AZURE_STORAGE_ACCOUNT $AZURE_STORAGE_KEY
     ```
 
     **Windows**
@@ -158,7 +159,61 @@ To get started, you'll need the following installed on your machine.
     --packages org.apache.hadoop:hadoop-azure:2.7.3,com.microsoft.azure:azure-storage:3.1.0 ^
     --class org.apache.spark.deploy.dotnet.DotnetRunner ^
     --master local microsoft-spark-2.4.x-0.12.1.jar ^
-    mySparkBlobStorageApp %AZURE_STORAGE_ACCOUNT% %AZURE_STORAGE_KEY%
+    Dotnet.Spark.CSharp.Examples.AzureStorage %AZURE_STORAGE_ACCOUNT% %AZURE_STORAGE_KEY%
+    ```
+    
+
+### Azure Data Lake Storage Gen1
+
+1. Create a Service Principal on Azure Active Directory (AAD).
+2. Grant Service Principal Read/Write/Execute access to the Data Lake Storage account. This can be configured in the account's IAM Settings.
+3. Retrieve the AAD Tenant (Directory) ID, Service Principal Client (Application) ID, Client Secret, and Data Lake Storage name.
+2. Create environment variables for your Tenant ID (`TENANT_ID`), Data Lake name (`ADLS_NAME`), Service Principal Client ID (`ADLS_SP_CLIENT_ID`) and Client Secret (`ADLS_SP_CLIENT_SECRET`).
+
+    **Linux**
+    ```sh
+    export $TENANT_ID="<aad-tenant-id>"
+    export $ADLS_NAME="<data-lake-gen1-name>"
+    export $ADLS_SP_CLIENT_ID="<service-principal-client-id>"
+    export $ADLS_SP_CLIENT_SECRET="<service-principal-client-key>"
+    ```
+
+    **Windows**
+    ```sh
+    setx TENANT_ID "<aad-tenant-id>"
+    setx ADLS_NAME "<data-lake-gen1-name>"
+    setx ADLS_SP_CLIENT_ID "<service-principal-client-id>"
+    setx ADLS_SP_CLIENT_SECRET "<service-principal-client-key>"
+    ```
+3. Go to build output directory.
+    
+    **Linux**
+    ```sh
+    cd src/Dotnet.Spark.Examples/Dotnet.Spark.CSharp.Examples.AzureDataLakeStorageGen1/bin/Debug/netcoreapp3.1
+    ```
+
+    **Windows**
+    ```sh
+    cd .\src\Dotnet.Spark.Examples\Dotnet.Spark.CSharp.Examples.AzureDataLakeStorageGen1\bin\Debug\netcoreapp3.1
+    ```
+4. Submit application to run on Apache Spark.
+    
+    **Linux**
+    ```sh
+    spark-submit \
+    --packages com.rentpath:hadoop-azure-datalake:2.7.3-0.1.0 \
+    --class org.apache.spark.deploy.dotnet.DotnetRunner \ 
+    --master local microsoft-spark-2.4.x-0.12.1.jar \
+    ./Dotnet.Spark.CSharp.Examples.AzureDataLakeStorageGen1 $TENANT_ID $ADLS_NAME $ADLS_SP_CLIENT_ID $ADLS_SP_CLIENT_SECRET
+    ```
+
+    **Windows**
+    ```sh
+    spark-submit ^
+    --packages com.rentpath:hadoop-azure-datalake:2.7.3-0.1.0 ^
+    --class org.apache.spark.deploy.dotnet.DotnetRunner ^
+    --master local microsoft-spark-2.4.x-0.12.1.jar ^
+    Dotnet.Spark.CSharp.Examples.AzureDataLakeStorageGen1 %TENANT_ID% %ADLS_NAME% %ADLS_SP_CLIENT_ID% %ADLS_SP_CLIENT_SECRET%
     ```
     
 ## Contributing
