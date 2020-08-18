@@ -5,7 +5,7 @@ open Microsoft.Spark.Sql.Types
 [<EntryPoint>]
 let main args =
     match args with
-    | [| tenantId; dataLakeName; servicePrincipalClientId; servicePrincipalSecret |] ->
+    | [| tenantId; dataLakeName; servicePrincipalClientId; servicePrincipalClientSecret |] ->
 
         // Specify file path in Azure Data Lake Gen1
         let filePath = 
@@ -18,7 +18,7 @@ let main args =
                 .Config("fs.adl.impl", "org.apache.hadoop.fs.adl.AdlFileSystem")
                 .Config("fs.adl.oauth2.access.token.provider.type", "ClientCredential")
                 .Config("fs.adl.oauth2.client.id",servicePrincipalClientId)
-                .Config("fs.adl.oauth2.credential", servicePrincipalSecret)
+                .Config("fs.adl.oauth2.credential", servicePrincipalClientSecret)
                 .Config("fs.adl.oauth2.refresh.url", 
                     sprintf "https://login.microsoftonline.com/%s/oauth2/token" tenantId)
                 .GetOrCreate()
