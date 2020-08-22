@@ -122,8 +122,8 @@ To get started, you'll need the following installed on your machine.
 
     **Linux**
     ```sh
-    export $AZURE_STORAGE_ACCOUNT="<storage-account-name>"
-    export $AZURE_STORAGE_KEY="<storage-account-key>"
+    export AZURE_STORAGE_ACCOUNT="<storage-account-name>"
+    export AZURE_STORAGE_KEY="<storage-account-key>"
     ```
 
     **Windows**
@@ -172,10 +172,10 @@ To get started, you'll need the following installed on your machine.
 
     **Linux**
     ```sh
-    export $TENANT_ID="<aad-tenant-id>"
-    export $ADLS_NAME="<data-lake-gen1-name>"
-    export $ADLS_SP_CLIENT_ID="<service-principal-client-id>"
-    export $ADLS_SP_CLIENT_SECRET="<service-principal-client-key>"
+    export TENANT_ID="<aad-tenant-id>"
+    export ADLS_NAME="<data-lake-gen1-name>"
+    export ADLS_SP_CLIENT_ID="<service-principal-client-id>"
+    export ADLS_SP_CLIENT_SECRET="<service-principal-client-key>"
     ```
 
     **Windows**
